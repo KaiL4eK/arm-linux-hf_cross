@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+	echo "Tag is not set"
+else
+	echo "Tag is set to $1"
+	docker build -t kail4ek/arm-linux-hf_cross:$1 .
+fi
