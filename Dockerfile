@@ -18,7 +18,7 @@ RUN wget https://releases.linaro.org/components/toolchain/binaries/latest-6/arm-
 	rsync -a gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/ /usr/ && \
 	rm -rf gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf.tar.xz
 
-RUN apt-get install make nano cmake -y
+RUN apt-get install make nano cmake autoconf -y
 #RUN apt-get install
 
 ENV CROSS_TRIPLE arm-linux-gnueabihf
