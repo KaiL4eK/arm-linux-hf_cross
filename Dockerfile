@@ -19,17 +19,18 @@ RUN wget https://releases.linaro.org/components/toolchain/binaries/latest-6/arm-
 	rm -rf gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf.tar.xz
 
 RUN apt-get install make nano cmake autoconf -y
-#RUN apt-get install
+RUN apt-get install qemu-user qemu-user-static -y
 
-ENV CROSS_TRIPLE arm-linux-gnueabihf
-ENV CROSS_ROOT 	 /usr/${CROSS_TRIPLE}
-ENV AS=/usr/bin/${CROSS_TRIPLE}-as \
-    AR=/usr/bin/${CROSS_TRIPLE}-ar \
-    CC=/usr/bin/${CROSS_TRIPLE}-gcc \
-    CPP=/usr/bin/${CROSS_TRIPLE}-cpp \
-    CXX=/usr/bin/${CROSS_TRIPLE}-g++ \
-    LD=/usr/bin/${CROSS_TRIPLE}-ld \ 
-    LD_LIBRARY_PATH=/usr/arm-linux-gnueabihf/libc/lib:/usr/arm-linux-gnueabihf/lib
+ENV HOST           arm-linux-gnueabihf
+ENV HOST_TOOLCHAIN /usr/${HOST}
+ENV QEMU_LD_PREFIX ${HOST_TOOLCHAIN}/libc
+ENV AS=/usr/bin/${HOST}-as \
+    AR=/usr/bin/${HOST}-ar \
+    CC=/usr/bin/${HOST}-gcc \
+    CPP=/usr/bin/${HOST}-cpp \
+    CXX=/usr/bin/${HOST}-g++ \
+    LD=/usr/bin/${HOST}-ld \ 
+    LD_LIBRARY_PATH="${HOST_TOOLCHAIN}/libc/lib:${HOST_TOOLCHAIN}/libc/usr/lib:${HOST_TOOLCHAIN}/lib"
 
 USER developer
 ENV HOME /home/developer
