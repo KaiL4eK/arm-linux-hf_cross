@@ -27,8 +27,10 @@ ENV QEMU_LD_PREFIX ${HOST_TOOLCHAIN}/libc
 ENV AS=/usr/bin/${HOST}-as \
     AR=/usr/bin/${HOST}-ar \
     CC=/usr/bin/${HOST}-gcc \
+    CFLAGS=-mcpu=cortex-a7 \
     CPP=/usr/bin/${HOST}-cpp \
     CXX=/usr/bin/${HOST}-g++ \
+    CXXFLAGS=-mcpu=cortex-a7 \
     LD=/usr/bin/${HOST}-ld \ 
     LD_LIBRARY_PATH="${HOST_TOOLCHAIN}/libc/lib:${HOST_TOOLCHAIN}/libc/usr/lib:${HOST_TOOLCHAIN}/lib"
 
