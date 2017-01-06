@@ -10,7 +10,7 @@ RUN mkdir -p /home/developer && \
     chown developer:developer -R /home/developer && \
     chown root:root /usr/bin/sudo && chmod 4755 /usr/bin/sudo
 
-RUN apt-get install xz-utils rsync wget -y
+RUN apt-get install xz-utils rsync wget gcc g++ make nano autoconf lib32z1 -y
 
 WORKDIR /tmp
 RUN wget https://releases.linaro.org/components/toolchain/binaries/4.9-2016.02/arm-linux-gnueabihf/gcc-linaro-4.9-2016.02-x86_64_arm-linux-gnueabihf.tar.xz -q && \
@@ -18,8 +18,11 @@ RUN wget https://releases.linaro.org/components/toolchain/binaries/4.9-2016.02/a
 	rsync -a gcc-linaro-4.9-2016.02-x86_64_arm-linux-gnueabihf/ /usr/ && \
 	rm -rf gcc-linaro-4.9-2016.02-x86_64_arm-linux-gnueabihf gcc-linaro-4.9-2016.02-x86_64_arm-linux-gnueabihf.tar.xz
 
-RUN apt-get install make nano cmake autoconf lib32z1 g++ -y
-#RUN apt-get install qemu-user qemu-user-static -y
+RUN wget https://cmake.org/files/v3.7/cmake-3.7.1.tar.gz -q && \
+	tar xzvf cmake-3.7.1.tar.gz && \
+	cd cmake-3.7.1 && \
+	./bootstrap && \
+	make install -j4	
 
 ENV TARGET           arm-linux-gnueabihf
 ENV TARGET_TOOLCHAIN /usr/${TARGET}
