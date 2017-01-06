@@ -18,7 +18,7 @@ RUN wget https://releases.linaro.org/components/toolchain/binaries/4.9-2016.02/a
 	rsync -a gcc-linaro-4.9-2016.02-x86_64_arm-linux-gnueabihf/ /usr/ && \
 	rm -rf gcc-linaro-4.9-2016.02-x86_64_arm-linux-gnueabihf gcc-linaro-4.9-2016.02-x86_64_arm-linux-gnueabihf.tar.xz
 
-RUN apt-get install make nano cmake autoconf -y
+RUN apt-get install make nano cmake autoconf lib32z1 g++ -y
 #RUN apt-get install qemu-user qemu-user-static -y
 
 ENV TARGET           arm-linux-gnueabihf
