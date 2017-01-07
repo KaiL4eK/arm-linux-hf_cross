@@ -12,7 +12,5 @@ cmake -D CMAKE_INSTALL_PREFIX=$TBB_INSTALL_DIR \
 # For TBB with Makefile
 #ARCH=armv7
 #COMPILER=$TARGET-gcc
-#cd $TBB_ROOT &&\
 #make arch=$ARCH compiler=$COMPILER -j4 &&\
-#mkdir -p lib &&\
 #rsync -a build/linux_"$ARCH"_"$COMPILER"_cc4.8_libc2.19_kernel3.19.0_release/*.so* lib

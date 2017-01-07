@@ -1,1 +1,3 @@
-docker run --rm --name rpi -ti kail4ek/arm-linux-hf_cross
+#!/bin/bash
+
+docker run --rm -ti -v $(pwd):/home/developer kail4ek/arm-linux-hf_cross

@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ -z $TARGET ]; then
+	echo "Target is not set. It can happen if started outside Docker container"
+	exit 1
+fi
+
 libraries_directory=$HOME
 
 TBB_ROOT=$libraries_directory/tbb-src
