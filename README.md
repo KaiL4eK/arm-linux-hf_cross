@@ -1,6 +1,8 @@
 # arm-linux-hf_cross
 docker: https://hub.docker.com/r/kail4ek/arm-linux-hf_cross/
 
+Good guide: http://wiki.bigfug.com/Cross_Compile_Fugio_To_Raspberry_Pi
+
 To set correct sysroot of RPi usage described here: https://sysprogs.com/w/fixing-rpath-link-issues-with-cross-compilers/  
 In short:  
 	- Set -rpath-link  

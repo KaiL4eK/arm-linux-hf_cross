@@ -21,6 +21,7 @@ unset CFLAGS
 		-opengl es2 \
 		-prefix $QT_INSTALL_DIR \
 		-extprefix $QT_INSTALL_DIR \
+		-hostprefix $QT_HOST_INSTALL_DIR \
 		-qt-xcb \
 		-sysroot $SYSROOT -v
 

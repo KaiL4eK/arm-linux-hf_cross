@@ -19,6 +19,7 @@ OPENCV_SRC_ROOT=$libraries_directory/opencv-3.1.0
 SYSROOT=$HOME/sysroot
 
 QT_INSTALL_DIR=$HOME/qt-arm
+QT_HOST_INSTALL_DIR=$HOME/qt-host
 
 EIGEN_INSTALL_DIR=$HOME/eigen-arm
 EIGEN_INCLUDE_DIR=$EIGEN_INSTALL_DIR/include/eigen3
