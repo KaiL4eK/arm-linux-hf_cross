@@ -5,28 +5,21 @@ if [ -z $TARGET ]; then
 	exit 1
 fi
 
-libraries_directory=$HOME
+SYSROOT=$HOME/sysroot_rpi
 
-TBB_ROOT=$libraries_directory/tbb-src
-TBB_INSTALL_DIR=$libraries_directory/tbb-arm
-TBB_INCLUDE_DIR=$TBB_INSTALL_DIR/include
-TBB_LIB_DIR=$TBB_INSTALL_DIR/lib
-TBB_STDDEF_PATH=$TBB_INSTALL_DIR/include/tbb/tbb_stddef.h
+INSTALL_DIR=$HOME/$TARGET-compiled_data
+INCLUDE_DIR=$INSTALL_DIR/include
+LIBRARY_DIR=$INSTALL_DIR/lib
 
-OPENCV_INSTALL_DIR=$libraries_directory/opencv-arm
-OPENCV_SRC_ROOT=$libraries_directory/opencv-3.1.0
-
-SYSROOT=$HOME/sysroot
-
-QT_INSTALL_DIR=$HOME/qt-arm
 QT_HOST_INSTALL_DIR=$HOME/qt-host
 
-EIGEN_INSTALL_DIR=$HOME/eigen-arm
-EIGEN_INCLUDE_DIR=$EIGEN_INSTALL_DIR/include/eigen3
+#TBB_STDDEF_PATH=$INCLUDE_DIR/tbb/tbb_stddef.h
+
+EIGEN_INCLUDE_DIR=$INCLUDE_DIR/eigen3
 
 BUILD_DIRECTORY=build_user_cmake
 
 #PYTHONPATH=$OPENCV_DIR/lib/python2.7/dist-packages:$PYTHONPATH
 
-PKG_CONFIG_PATH=$OPENCV_INSTALL_DIR/lib/pkgconfig:$EIGEN_INSTALL_DIR/include/pkgconfig:$PKG_CONFIG_PATH
+PKG_CONFIG_PATH=$INSTALL_DIR/lib/pkgconfig:$INSTALL_DIR/include/pkgconfig:$PKG_CONFIG_PATH
 
