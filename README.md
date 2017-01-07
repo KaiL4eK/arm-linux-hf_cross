@@ -8,7 +8,7 @@ In short:
 	- Set -rpath-link  
 	- Set direct paths to $SYSROOT/etc/ld.so.conf
 
-Scripts configured for OpenCV 3.1.0, Eigen 3.3.1, TBB 20160908 release, qt 5.3.2
+Scripts configured for OpenCV 3.1.0, Eigen 3.3.1, TBB 20160908 release, qt 5.7.1
 Scripts are configured for compilation inside Docker container
 
 TBB repo: 	https://github.com/wjakob/tbb.git  

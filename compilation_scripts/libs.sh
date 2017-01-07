@@ -23,3 +23,4 @@ BUILD_DIRECTORY=build_user_cmake
 
 PKG_CONFIG_PATH=$INSTALL_DIR/lib/pkgconfig:$INSTALL_DIR/include/pkgconfig:$PKG_CONFIG_PATH
 
+CMAKE_LIB_DIR="$INSTALL_DIR/share;$INSTALL_DIR/lib/cmake"
