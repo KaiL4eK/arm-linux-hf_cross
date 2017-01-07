@@ -2,10 +2,6 @@
 
 libraries_directory=$HOME
 
-EIGEN_ROOT=$libraries_directory/eigen-src
-EIGEN_INSTALL_DIR=$libraries_directory/eigen-arm
-EIGEN_INCLUDE_DIR=$EIGEN_INSTALL_DIR/include/eigen3
-
 TBB_ROOT=$libraries_directory/tbb-src
 TBB_INSTALL_DIR=$libraries_directory/tbb-arm
 TBB_INCLUDE_DIR=$TBB_INSTALL_DIR/include
@@ -16,7 +12,9 @@ OPENCV_INSTALL_DIR=$libraries_directory/opencv-arm
 OPENCV_SRC_ROOT=$libraries_directory/opencv-3.1.0
 
 SYSROOT=$HOME/sysroot
+
 QT_INSTALL_DIR=$HOME/qt-arm
+EIGEN_INSTALL_DIR=$HOME/eigen-arm
 
 BUILD_DIRECTORY=build_user_cmake
 
