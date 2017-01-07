@@ -6,7 +6,7 @@ In short:
 	- Set -rpath-link  
 	- Set direct paths to $SYSROOT/etc/ld.so.conf
 
-TBB repo: 	https://github.com/wjakob/tbb.git
-Eigen repo: 	https://bitbucket.org/eigen/eigen/ - Mercurial (hg)
-Qt5 repo: 	https://code.qt.io/cgit/qt/qt5.git/
-OpenCV repo: 	https://github.com/opencv/opencv 
+TBB repo: 	https://github.com/wjakob/tbb.git  
+Eigen repo: 	https://bitbucket.org/eigen/eigen/ - Mercurial (hg)  
+Qt5 repo: 	https://code.qt.io/cgit/qt/qt5.git/  
+OpenCV repo: 	https://github.com/opencv/opencv   
