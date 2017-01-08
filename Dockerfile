@@ -32,6 +32,7 @@ ADD sysroot_rpi.tar.gz /usr/
 
 ADD rpi-toolchain.cmake /usr/
 
+ENV HOST	     x86-linux
 ENV TARGET           arm-linux-gnueabihf
 ENV TARGET_TOOLCHAIN /usr/${TARGET}
 ENV TARGET_SYSROOT   /usr/sysroot
