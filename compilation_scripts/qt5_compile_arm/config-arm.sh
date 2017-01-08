@@ -2,6 +2,13 @@
 
 source ../libs.sh
 
+MKSPECS_DIR="qtbase/mkspecs/linux-arm-gnueabihf-g++"
+
+if [ ! -d "$MKSPECS_DIR" ]; then
+	cp -r "qtbase/mkspecs/linux-arm-gnueabi-g++" $MKSPECS_DIR
+	sed -i 's/gnueabi/gnueabihf/g' $MKSPECS_DIR/qmake.conf
+fi
+
 unset CC CXX CPP AR AS LD CXXFLAGS CFLAGS
 
 ./configure -release \
