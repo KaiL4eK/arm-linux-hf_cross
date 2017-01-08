@@ -32,6 +32,8 @@ ADD sysroot_rpi.tar.gz /usr/
 
 ADD rpi-toolchain.cmake /usr/
 
+RUN apt-get install git mercurial -y
+
 ENV HOST	     x86-linux
 ENV TARGET           arm-linux-gnueabihf
 ENV TARGET_TOOLCHAIN /usr/${TARGET}

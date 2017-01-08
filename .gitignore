@@ -1,2 +1,4 @@
-build*
-repo*
+*-src
+*_data
+*.cmake
+.bash_history

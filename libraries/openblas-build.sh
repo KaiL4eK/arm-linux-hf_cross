@@ -1,10 +1,13 @@
 #!/bin/bash
 
-source ../libs.sh
+source common.sh
 
-# required for linkage
-# sudo ln -sf $TARGET_SYSROOT/usr/lib/$TARGET/libpthread.so /lib/libpthread.so.0
-# sudo ln -sf $TARGET_SYSROOT/usr/lib/$TARGET/libpthread_nonshared.a /usr/lib/libpthread_nonshared.a
+REPO_TOOL=git
+REPO_ADDRESS=https://github.com/xianyi/OpenBLAS
+SRC_DIR=$OPENBLAS_SRC_DIR
 
+check_src_exist $REPO_TOOL $REPO_ADDRESS $SRC_DIR &&\
+$REPO_TOOL checkout master &&\
+confirm_building &&\
 make -j4 HOSTCC=gcc FC="" TARGET=ARMV7 && \
 make install PREFIX=$INSTALL_DIR

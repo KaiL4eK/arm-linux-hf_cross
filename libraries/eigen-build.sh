@@ -1,19 +1,16 @@
 #!/bin/bash
 
-source ../libs.sh
+source common.sh
 
-#export AS=/usr/bin/$TARGET-as
-#export AR=/usr/bin/$TARGET-ar
-#export CC=/usr/bin/$TARGET-gcc
-#export CFLAGS="-mcpu=cortex-a7"
-#export CPP=/usr/bin/$TARGET-cpp
-#export CXX=/usr/bin/$TARGET-g++
-#export CXXFLAGS=$CFLAGS
-#export LD=/usr/bin/$TARGET-ld
+REPO_TOOL=hg
+REPO_ADDRESS=https://bitbucket.org/eigen/eigen/
+SRC_DIR=$EIGEN_SRC_DIR
 
+check_src_exist $REPO_TOOL $REPO_ADDRESS $SRC_DIR &&\
+$REPO_TOOL checkout 3.3.1 &&\
 rm -rf $BUILD_DIRECTORY &&\
 mkdir $BUILD_DIRECTORY &&\
 cd $BUILD_DIRECTORY &&\
-cmake -D CMAKE_INSTALL_PREFIX=$INSTALL_DIR \
-        -D CMAKE_BUILD_TYPE=RELEASE \
-        ..
+cmake -D CMAKE_INSTALL_PREFIX=$INSTALL_DIR -D CMAKE_BUILD_TYPE=RELEASE .. &&\
+confirm_building &&\
+make install -j4

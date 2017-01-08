@@ -1,9 +1,16 @@
 #!/bin/bash
 
-source ../libs.sh
+source common.sh
+
+REPO_TOOL=git
+REPO_ADDRESS=git://code.qt.io/qt/qt5.git
+SRC_DIR=$QT5_SRC_DIR
+
+check_src_exist $REPO_TOOL $REPO_ADDRESS $SRC_DIR &&\
+./init-repository &&\
+$REPO_TOOL checkout 5.7.1
 
 MKSPECS_DIR="qtbase/mkspecs/linux-arm-gnueabihf-g++"
-
 if [ ! -d "$MKSPECS_DIR" ]; then
 	cp -r "qtbase/mkspecs/linux-arm-gnueabi-g++" $MKSPECS_DIR
 	sed -i 's/gnueabi/gnueabihf/g' $MKSPECS_DIR/qmake.conf
@@ -23,9 +30,10 @@ unset CC CXX CPP AR AS LD CXXFLAGS CFLAGS
 		-extprefix $INSTALL_DIR \
 		-hostprefix $QT_HOST_INSTALL_DIR \
 		-qt-xcb \
-		-sysroot $SYSROOT -v
-
-
+		-sysroot $SYSROOT -v &&\
+confirm_building &&\
+make -j4
+make install
 
 # to clean
 # git submodule foreach --recursive "git clean -dfx" && git clean -dfx

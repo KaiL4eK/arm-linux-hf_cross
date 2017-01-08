@@ -5,11 +5,39 @@ if [ -z $TARGET ]; then
 	exit 1
 fi
 
+# parameters: tool, repo_address, src_directory
+function check_src_exist {
+	if [ ! -d "$3" ]; then
+        	echo "Downloading sources from $2 to $3"
+        	$1 clone $2 $3
+	fi
+	cd $3
+}
+
+function confirm_building () {
+    # call with a prompt string or use a default
+    read -r -p "Are you sure to build? [y/N]" response
+    case $response in
+        [yY][eE][sS]|[yY]) 
+            true
+            ;;
+        *)
+            false
+            ;;
+    esac
+}
+
+TBB_SRC_DIR=tbb-src
+EIGEN_SRC_DIR=eigen-src
+OPENCV_SRC_DIR=opencv-src
+OPENBLAS_SRC_DIR=openblas-src
+QT5_SRC_DIR=qt5-src
+
 SYSROOT=$TARGET_SYSROOT
 CMAKE_TOOLCHAIN=$TARGET_CMAKE_TOOLCHAIN
 BUILD_DIRECTORY=build_$TARGET
 
-INSTALL_DIR=build_$TARGET
+INSTALL_DIR=$(pwd)/"$TARGET"_data
 INCLUDE_DIR=$INSTALL_DIR/include
 LIBRARY_DIR=$INSTALL_DIR/lib
 
