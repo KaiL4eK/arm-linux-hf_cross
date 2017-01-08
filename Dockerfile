@@ -39,11 +39,12 @@ ENV TARGET_CMAKE_TOOLCHAIN /usr/rpi-toolchain.cmake
 
 ENV AS=/usr/bin/${TARGET}-as \
     AR=/usr/bin/${TARGET}-ar \
+    FC=/usr/bin/${TARGET}-gfortran \
     CC=/usr/bin/${TARGET}-gcc \
-    CFLAGS=-mcpu=cortex-a7 \
+    CFLAGS="--sysroot=${TARGET_SYSROOT}" \
     CPP=/usr/bin/${TARGET}-cpp \
     CXX=/usr/bin/${TARGET}-g++ \
-    CXXFLAGS=-mcpu=cortex-a7 \
+    CXXFLAGS=${CFLAGS} \
     LD=/usr/bin/${TARGET}-ld \ 
     LD_LIBRARY_PATH="${TARGET_TOOLCHAIN}/libc/lib:${TARGET_TOOLCHAIN}/libc/usr/lib:${TARGET_TOOLCHAIN}/lib"
 

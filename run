@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker run --rm -ti -v $(pwd):/home/developer kail4ek/arm-linux-hf_cross
+docker run --rm -ti -v $(pwd):/home/developer kail4ek/cortex_a7-raspbian-cross-toolchain
