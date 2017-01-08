@@ -25,6 +25,8 @@ unset CC CXX CPP AR AS LD CXXFLAGS CFLAGS
 		-qt-xcb \
 		-sysroot $SYSROOT -v
 
+
+
 # to clean
 # git submodule foreach --recursive "git clean -dfx" && git clean -dfx
 # from:
