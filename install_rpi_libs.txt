@@ -1,0 +1,1 @@
+libusb-1.0-0-dev libudev-dev libinput-dev libts-dev libxcb-xinerama0-dev 
