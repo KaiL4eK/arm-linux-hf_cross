@@ -10,7 +10,7 @@ RUN mkdir -p /home/developer && \
     chown developer:developer -R /home/developer && \
     chown root:root /usr/bin/sudo && chmod 4755 /usr/bin/sudo
 
-RUN apt-get install xz-utils rsync wget gcc g++ make nano autoconf lib32z1 python -y
+RUN apt-get install xz-utils rsync wget gcc g++ make nano autoconf lib32z1 python git mercurial -y
 
 WORKDIR /tmp
 RUN wget https://releases.linaro.org/components/toolchain/binaries/4.9-2016.02/arm-linux-gnueabihf/gcc-linaro-4.9-2016.02-x86_64_arm-linux-gnueabihf.tar.xz -q && \
@@ -31,8 +31,6 @@ ADD sysroot_rpi.tar.gz /usr/
 #	rm -rf sysroot sysroot_rpi.tar.gz
 
 ADD rpi-toolchain.cmake /usr/
-
-RUN apt-get install git mercurial -y
 
 ENV HOST	     x86-linux
 ENV TARGET           arm-linux-gnueabihf
