@@ -12,4 +12,4 @@ export ARM_CXX=$CXX
 export ARM_STAGING=$TARGET_SYSROOT
 
 confirm_building &&\
-PLATFORM=Arm make CFG=Debug
+PLATFORM=Arm make -j4 CFG=Debug
