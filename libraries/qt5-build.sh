@@ -7,8 +7,9 @@ REPO_ADDRESS=https://github.com/qt/qt5.git
 SRC_DIR=$QT5_SRC_DIR
 
 check_src_exist $REPO_TOOL $REPO_ADDRESS $SRC_DIR &&\
-./init-repository &&\
-$REPO_TOOL checkout 5.7.1
+$REPO_TOOL checkout 5.8 &&\
+./init-repository
+
 
 MKSPECS_DIR="qtbase/mkspecs/linux-arm-gnueabihf-g++"
 if [ ! -d "$MKSPECS_DIR" ]; then
