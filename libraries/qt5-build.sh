@@ -3,7 +3,7 @@
 source common.sh
 
 REPO_TOOL=git
-REPO_ADDRESS=git://code.qt.io/qt/qt5.git
+REPO_ADDRESS=https://github.com/qt/qt5.git
 SRC_DIR=$QT5_SRC_DIR
 
 check_src_exist $REPO_TOOL $REPO_ADDRESS $SRC_DIR &&\
