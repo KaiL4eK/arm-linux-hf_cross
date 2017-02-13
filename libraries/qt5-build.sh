@@ -30,7 +30,7 @@ unset CC CXX CPP AR AS LD CXXFLAGS CFLAGS
 		-extprefix $INSTALL_DIR \
 		-hostprefix $QT_HOST_INSTALL_DIR \
 		-qt-xcb \
-		-sysroot $SYSROOT -v &&\
+		-sysroot $TARGET_SYSROOT -v &&\
 confirm_building &&\
 make -j4
 make install
