@@ -19,17 +19,19 @@ fi
 
 unset CC CXX CPP AR AS LD CXXFLAGS CFLAGS
 
+# -device linux-rasp-pi-g++
+
 ./configure -release \
-		-device linux-rasp-pi-g++ -make libs -device-option CROSS_COMPILE=$TARGET- \
+		-make libs -device-option CROSS_COMPILE=$TARGET- \
 		-opensource -confirm-license \
 		-platform linux-g++ -xplatform linux-arm-gnueabihf-g++ \
 		-nomake examples -nomake tests \
 		-skip qtwebkit \
 		-reduce-exports \
-		-opengl es2 \
 		-prefix $INSTALL_DIR \
 		-extprefix $INSTALL_DIR \
 		-hostprefix $QT_HOST_INSTALL_DIR \
+		-opengl es2 \
 		-qt-xcb \
 		-sysroot $TARGET_SYSROOT -v &&\
 confirm_building &&\

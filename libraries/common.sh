@@ -42,7 +42,7 @@ INSTALL_DIR=$(pwd)/"$TARGET"_data
 INCLUDE_DIR=$INSTALL_DIR/include
 LIBRARY_DIR=$INSTALL_DIR/lib
 
-QT_HOST_INSTALL_DIR=qt-"$HOST"-data
+QT_HOST_INSTALL_DIR=$(pwd)/qt-"$HOST"-data
 
 #PYTHONPATH=$OPENCV_DIR/lib/python2.7/dist-packages:$PYTHONPATH
 
