@@ -13,10 +13,11 @@ RUN mkdir -p /home/developer && \
 RUN apt-get install xz-utils rsync wget gcc g++ make nano autoconf lib32z1 python git mercurial -y
 
 WORKDIR /tmp
-RUN wget https://releases.linaro.org/components/toolchain/binaries/4.9-2016.02/arm-linux-gnueabihf/gcc-linaro-4.9-2016.02-x86_64_arm-linux-gnueabihf.tar.xz -q && \
-	tar xf gcc-linaro-4.9-2016.02-x86_64_arm-linux-gnueabihf.tar.xz && \
-	rsync -a gcc-linaro-4.9-2016.02-x86_64_arm-linux-gnueabihf/ /usr/ && \
-	rm -rf gcc-linaro-4.9-2016.02-x86_64_arm-linux-gnueabihf gcc-linaro-4.9-2016.02-x86_64_arm-linux-gnueabihf.tar.xz
+RUN wget https://releases.linaro.org/components/toolchain/binaries/6.2-2016.11/arm-linux-gnueabihf/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf.tar.xz -q && \
+	tar xf gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf.tar.xz && \
+	rsync -a gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/ /usr/ && \
+	rm -rf gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf \
+	       gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf.tar.xz
 
 RUN wget https://cmake.org/files/v3.7/cmake-3.7.1.tar.gz -q && \
 	tar xzvf cmake-3.7.1.tar.gz && \
@@ -25,7 +26,7 @@ RUN wget https://cmake.org/files/v3.7/cmake-3.7.1.tar.gz -q && \
 	make install -j4 && \
 	cd .. && rm -rf cmake-3.7.1.tar.gz cmake-3.7.1/
 
-ADD sysroot_rpi.tar.gz /usr/
+#ADD sysroot_rpi.tar.gz /usr/
 #	tar zxf sysroot_rpi.tar.gz && \
 #	rsync -a sysroot /usr/ && \
 #	rm -rf sysroot sysroot_rpi.tar.gz

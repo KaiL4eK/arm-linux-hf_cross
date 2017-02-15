@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ -z $1 ]; then
+	echo "Sysroot is not set"
+	exit
+fi
+
+if [[ $1 = /* ]]; then
+	echo "Path to sysroot must be relative"
+	exit
+fi
+
+docker run --rm -ti -v $(pwd):/home/developer -v $(pwd)/$1:/usr/sysroot kail4ek/cortex_a7-raspbian-cross-toolchain

@@ -28,6 +28,7 @@ function confirm_building () {
 }
 
 TBB_SRC_DIR=tbb-src
+TBB_ALT_SRC_DIR=tbb-alt-src
 EIGEN_SRC_DIR=eigen-src
 OPENCV_SRC_DIR=opencv-src
 OPENBLAS_SRC_DIR=openblas-src
