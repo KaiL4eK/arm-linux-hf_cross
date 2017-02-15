@@ -12,7 +12,7 @@ Scripts configured for
 	OpenCV 3.1.0,   
 	Eigen 3.3.1,   
 	TBB 20160908 release,   
-	qt 5.7.1,   
+	qt 5.8,   
 	OpenBLAS 0.2.19  
 	OpenNI  
 	
