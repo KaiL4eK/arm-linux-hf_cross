@@ -24,3 +24,5 @@ Qt5 repo: 	https://code.qt.io/cgit/qt/qt5.git/
 OpenCV repo: 	https://github.com/opencv/opencv   
 OpenBLAS repo:	https://github.com/xianyi/OpenBLAS
 OpenNI repo: https://github.com/occipital/OpenNI2
+
+BananaPi M1 gcc 4.6 OpenCV compile "-D WITH_JASPER=OFF"
